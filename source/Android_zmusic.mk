@@ -40,6 +40,7 @@ LOCAL_SRC_FILES =  	\
 	mididevices/music_wildmidi_mididevice.cpp \
 	mididevices/music_wavewriter_mididevice.cpp \
 	midisources/midisource.cpp \
+	midisources/midisource_mids.cpp \
 	midisources/midisource_mus.cpp \
 	midisources/midisource_smf.cpp \
 	midisources/midisource_hmi.cpp \
