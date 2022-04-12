@@ -726,8 +726,8 @@ DLL_EXPORT zmusic_bool ChangeMusicSettingFloat(EFloatConfigKey key, MusInfo* cur
 		case zmusic_fluid_chorus_level:
 			if (value < 0)
 				value = 0;
-			else if (value > 1)
-				value = 1;
+			else if (value > 10)
+				value = 10;
 
 			if (currSong != NULL)
 				currSong->ChangeSettingNum("fluidsynth.z.chorus", value);
