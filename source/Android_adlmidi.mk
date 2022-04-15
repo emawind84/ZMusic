@@ -1,19 +1,15 @@
 
 LOCAL_PATH := $(call my-dir)/../thirdparty/adlmidi
 
-
 include $(CLEAR_VARS)
-
 
 LOCAL_MODULE    := adlmidi_zm
 
 LOCAL_CFLAGS := -DADLMIDI_DISABLE_MIDI_SEQUENCER -fsigned-char
+
 LOCAL_CPPFLAGS :=  -fexceptions
 
-LOCAL_LDLIBS += -llog
-
 LOCAL_C_INCLUDES :=
-
 
 LOCAL_SRC_FILES =  	\
 	adlmidi.cpp \
