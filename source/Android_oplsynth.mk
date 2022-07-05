@@ -19,6 +19,8 @@ LOCAL_SRC_FILES =  	\
 	oplio.cpp \
 	dosbox/opl.cpp \
 
+LOCAL_CFLAGS += -fvisibility=hidden -fdata-sections -ffunction-sections
+
 include $(BUILD_STATIC_LIBRARY)
 
 

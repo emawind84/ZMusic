@@ -63,6 +63,7 @@ LOCAL_SRC_FILES =  	\
 
 LOCAL_STATIC_LIBRARIES := zlib_zm oplsynth_zm  opnmidi_zm timidity_zm timidityplus_zm wildmidi_zm adlmidi_zm gme_zm dumb_zm  sndfile mpg123 fluidsynth-static
 
+LOCAL_LDFLAGS += -Wl,--gc-sections -flto
 
 include $(BUILD_SHARED_LIBRARY)
 
