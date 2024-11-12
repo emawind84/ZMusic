@@ -68,6 +68,7 @@ LOCAL_SRC_FILES =  	\
     src/it/read669.c \
     src/it/read6692.c \
     src/it/readam.c \
+    src/it/readamf.c \
     src/it/readasy.c \
     src/it/readdsmf.c \
     src/it/readmod.c \

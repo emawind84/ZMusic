@@ -13,7 +13,7 @@ LOCAL_C_INCLUDES :=
 
 LOCAL_SRC_FILES =  	\
 	chips/gens_opn2.cpp \
-        	chips/gens/Ym2612_Emu.cpp \
+        	chips/gens/Ym2612.cpp \
         	chips/gx_opn2.cpp \
         	chips/mamefm/fm.cpp \
         	chips/mamefm/resampler.cpp \
