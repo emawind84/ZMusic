@@ -23,9 +23,9 @@ $(LOCAL_PATH)/../thirdparty/timidityplus \
 $(LOCAL_PATH)/../thirdparty/wildmidi \
 $(LOCAL_PATH)/../thirdparty/game-music-emu \
 $(LOCAL_PATH)/../thirdparty/miniz \
-$(TOP_DIR)/fluidsynth-lite/include \
-$(TOP_DIR)/libsndfile-android/jni/ \
-$(TOP_DIR)/libmpg123 \
+$(SUPPORT_LIBS)/fluidsynth-lite/include \
+$(SUPPORT_LIBS)/libsndfile-android/jni/ \
+$(SUPPORT_LIBS)/libmpg123 \
 
 
 LOCAL_SRC_FILES =  	\
