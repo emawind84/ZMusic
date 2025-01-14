@@ -5,7 +5,7 @@ if (VCPKG_LIBSNDFILE)
 endif()
 
 project(ZMusic
-	VERSION 1.1.12
+	VERSION 1.1.14
 	LANGUAGES C CXX
 )
 
@@ -127,6 +127,11 @@ endif()
 
 # Initialize our list of find_package dependencies for configure_package_config_file
 set(ZMUSIC_PACKAGE_DEPENDENCIES "" CACHE INTERNAL "")
+
+if (WIN32 AND MINGW)
+	add_compile_definitions(-D_UNICODE -DUNICODE)
+	add_compile_definitions(-D__USE_MINGW_ANSI_STDIO=1)
+endif()
 
 add_subdirectory(thirdparty)
 add_subdirectory(source)

@@ -652,6 +652,10 @@ DLL_EXPORT zmusic_bool ChangeMusicSettingInt(EIntConfigKey key, MusInfo *currSon
 			miscConfig.snd_outputrate = value;
 			return false;
 
+		case zmusic_mod_preferredplayer:
+			dumbConfig.mod_preferred_player = value;
+			return false;
+
 	}
 	return false;
 }
@@ -678,8 +682,8 @@ DLL_EXPORT zmusic_bool ChangeMusicSettingFloat(EFloatConfigKey key, MusInfo* cur
 		case zmusic_fluid_reverb_roomsize:
 			if (value < 0)
 				value = 0;
-			else if (value > 1.2f)
-				value = 1.2f;
+			else if (value > 1.0f)
+				value = 1.0f;
 
 			if (currSong != NULL)
 				currSong->ChangeSettingNum("fluidsynth.z.reverb", value);
@@ -736,8 +740,8 @@ DLL_EXPORT zmusic_bool ChangeMusicSettingFloat(EFloatConfigKey key, MusInfo* cur
 			return false;
 
 		case zmusic_fluid_chorus_speed:
-			if (value < 0.29f)
-				value = 0.29f;
+			if (value < 0.1f)
+				value = 0.1f;
 			else if (value > 5)
 				value = 5;
 
@@ -751,8 +755,8 @@ DLL_EXPORT zmusic_bool ChangeMusicSettingFloat(EFloatConfigKey key, MusInfo* cur
 		case zmusic_fluid_chorus_depth:
 			if (value < 0)
 				value = 0;
-			else if (value > 21)
-				value = 21;
+			else if (value > 256)
+				value = 256;
 
 			if (currSong != NULL)
 				currSong->ChangeSettingNum("fluidsynth.z.chorus", value);
@@ -942,6 +946,7 @@ static ZMusicConfigurationSetting config[] = {
 	{"zmusic_mod_autochip_size_force", zmusic_mod_autochip_size_force, ZMUSIC_VAR_INT, 100},
 	{"zmusic_mod_autochip_size_scan", zmusic_mod_autochip_size_scan, ZMUSIC_VAR_INT, 500},
 	{"zmusic_mod_autochip_scan_threshold", zmusic_mod_autochip_scan_threshold, ZMUSIC_VAR_INT, 12},
+	{"zmusic_mod_preferred_player", zmusic_mod_preferredplayer, ZMUSIC_VAR_INT, 0},
 	{"zmusic_mod_dumb_mastervolume", zmusic_mod_dumb_mastervolume, ZMUSIC_VAR_FLOAT, 1},
 
 	{"zmusic_gme_stereodepth", zmusic_gme_stereodepth, ZMUSIC_VAR_FLOAT, 0},

@@ -257,9 +257,27 @@ static  MusInfo *ZMusic_OpenSongInternal (MusicIO::FileInterface *reader, EMidiD
 				streamsource = GME_OpenSong(reader, fmt, miscConfig.snd_outputrate);
 			}
 			// Check for module formats
-			else
+			else if ((id[0] == MAKE_ID('R', 'I', 'F', 'F') && id[2] == MAKE_ID('D', 'S', 'M', 'F')))
 			{
 				streamsource = MOD_OpenSong(reader, miscConfig.snd_outputrate);
+			}
+			else
+			{
+				// give the calling app an option to select between XMP and DUMB.
+				if (dumbConfig.mod_preferred_player != 0)
+				{
+					streamsource = MOD_OpenSong(reader, miscConfig.snd_outputrate);
+				}
+				if (!streamsource)
+				{
+					reader->seek(0, SEEK_SET);
+					streamsource = XMP_OpenSong(reader, miscConfig.snd_outputrate);
+					if (!streamsource && dumbConfig.mod_preferred_player == 0)
+					{
+						reader->seek(0, SEEK_SET);
+						streamsource = MOD_OpenSong(reader, miscConfig.snd_outputrate);
+					}
+				}
 			}
 			if (streamsource == nullptr)
 			{
