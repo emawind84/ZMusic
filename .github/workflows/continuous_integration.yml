@@ -90,7 +90,7 @@ jobs:
         fi
 
     - name: Upload Install Directory
-      if: false  # Remove this line to upload build artifacts
+      if: true  # Remove this line to upload build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.config.name }}
